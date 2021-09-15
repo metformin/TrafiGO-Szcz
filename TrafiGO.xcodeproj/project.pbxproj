@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		F9A27E0926F24BFA00489892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0826F24BFA00489892 /* AppDelegate.swift */; };
 		F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */; };
-		F9A27E0D26F24BFA00489892 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0C26F24BFA00489892 /* ViewController.swift */; };
+		F9A27E0D26F24BFA00489892 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0C26F24BFA00489892 /* HomeViewController.swift */; };
 		F9A27E1026F24BFA00489892 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E0E26F24BFA00489892 /* Main.storyboard */; };
 		F9A27E1226F24BFB00489892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E1126F24BFB00489892 /* Assets.xcassets */; };
 		F9A27E1526F24BFB00489892 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E1326F24BFB00489892 /* LaunchScreen.storyboard */; };
+		F9A27E1F26F24E7D00489892 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E1E26F24E7D00489892 /* HomeViewModel.swift */; };
+		F9A27E2226F2539400489892 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E2126F2539400489892 /* Extensions.swift */; };
+		F9A27E2426F2598C00489892 /* stops.xls in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E2326F2598C00489892 /* stops.xls */; };
+		F9A27E2626F275D300489892 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E2526F275D300489892 /* stops.json */; };
+		F9A27E2926F276A000489892 /* StopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E2826F276A000489892 /* StopsModel.swift */; };
+		F9A27E2B26F295F300489892 /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F9A27E0526F24BFA00489892 /* TrafiGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafiGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A27E0826F24BFA00489892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F9A27E0C26F24BFA00489892 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F9A27E0C26F24BFA00489892 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		F9A27E0F26F24BFA00489892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9A27E1126F24BFB00489892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9A27E1426F24BFB00489892 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9A27E1626F24BFB00489892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9A27E1E26F24E7D00489892 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F9A27E2126F2539400489892 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F9A27E2326F2598C00489892 /* stops.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = stops.xls; sourceTree = "<group>"; };
+		F9A27E2526F275D300489892 /* stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		F9A27E2826F276A000489892 /* StopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsModel.swift; sourceTree = "<group>"; };
+		F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,45 @@
 		F9A27E0726F24BFA00489892 /* TrafiGO */ = {
 			isa = PBXGroup;
 			children = (
+				F9A27E2726F2769200489892 /* Models */,
+				F9A27E1C26F24DF700489892 /* Scenes */,
 				F9A27E0826F24BFA00489892 /* AppDelegate.swift */,
 				F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */,
-				F9A27E0C26F24BFA00489892 /* ViewController.swift */,
 				F9A27E0E26F24BFA00489892 /* Main.storyboard */,
 				F9A27E1126F24BFB00489892 /* Assets.xcassets */,
+				F9A27E2326F2598C00489892 /* stops.xls */,
 				F9A27E1326F24BFB00489892 /* LaunchScreen.storyboard */,
 				F9A27E1626F24BFB00489892 /* Info.plist */,
+				F9A27E2126F2539400489892 /* Extensions.swift */,
+				F9A27E2526F275D300489892 /* stops.json */,
 			);
 			path = TrafiGO;
+			sourceTree = "<group>";
+		};
+		F9A27E1C26F24DF700489892 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F9A27E1D26F24E0A00489892 /* HomeView */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F9A27E1D26F24E0A00489892 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				F9A27E0C26F24BFA00489892 /* HomeViewController.swift */,
+				F9A27E1E26F24E7D00489892 /* HomeViewModel.swift */,
+				F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */,
+			);
+			path = HomeView;
+			sourceTree = "<group>";
+		};
+		F9A27E2726F2769200489892 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F9A27E2826F276A000489892 /* StopsModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +169,8 @@
 				F9A27E1526F24BFB00489892 /* LaunchScreen.storyboard in Resources */,
 				F9A27E1226F24BFB00489892 /* Assets.xcassets in Resources */,
 				F9A27E1026F24BFA00489892 /* Main.storyboard in Resources */,
+				F9A27E2626F275D300489892 /* stops.json in Resources */,
+				F9A27E2426F2598C00489892 /* stops.xls in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +181,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9A27E0D26F24BFA00489892 /* ViewController.swift in Sources */,
+				F9A27E2226F2539400489892 /* Extensions.swift in Sources */,
+				F9A27E0D26F24BFA00489892 /* HomeViewController.swift in Sources */,
 				F9A27E0926F24BFA00489892 /* AppDelegate.swift in Sources */,
+				F9A27E2B26F295F300489892 /* LocationAnnotationView.swift in Sources */,
+				F9A27E2926F276A000489892 /* StopsModel.swift in Sources */,
 				F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */,
+				F9A27E1F26F24E7D00489892 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7C5Q848B5;
 				INFOPLIST_FILE = TrafiGO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -296,7 +345,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DTDeveloper.TrafiGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,6 +357,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7C5Q848B5;
 				INFOPLIST_FILE = TrafiGO/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +365,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DTDeveloper.TrafiGO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
