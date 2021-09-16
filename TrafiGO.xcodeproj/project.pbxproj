@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4AF26F3A8F0006C9530 /* Annotation.swift */; };
+		F90CA4B426F3B750006C9530 /* annotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4B326F3B750006C9530 /* annotationView.xib */; };
+		F90CA4B626F3B78F006C9530 /* annotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4B526F3B78F006C9530 /* annotationView.swift */; };
+		F90CA4BD26F3E236006C9530 /* AnnotationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */; };
+		F90CA4BE26F3E236006C9530 /* AnnotationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */; };
 		F9A27E0926F24BFA00489892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0826F24BFA00489892 /* AppDelegate.swift */; };
 		F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */; };
 		F9A27E0D26F24BFA00489892 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0C26F24BFA00489892 /* HomeViewController.swift */; };
@@ -18,10 +23,14 @@
 		F9A27E2426F2598C00489892 /* stops.xls in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E2326F2598C00489892 /* stops.xls */; };
 		F9A27E2626F275D300489892 /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = F9A27E2526F275D300489892 /* stops.json */; };
 		F9A27E2926F276A000489892 /* StopsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E2826F276A000489892 /* StopsModel.swift */; };
-		F9A27E2B26F295F300489892 /* LocationAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F90CA4AF26F3A8F0006C9530 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		F90CA4B326F3B750006C9530 /* annotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = annotationView.xib; sourceTree = "<group>"; };
+		F90CA4B526F3B78F006C9530 /* annotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotationView.swift; sourceTree = "<group>"; };
+		F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewCell.swift; sourceTree = "<group>"; };
+		F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationTableViewCell.xib; sourceTree = "<group>"; };
 		F9A27E0526F24BFA00489892 /* TrafiGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafiGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A27E0826F24BFA00489892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +44,6 @@
 		F9A27E2326F2598C00489892 /* stops.xls */ = {isa = PBXFileReference; lastKnownFileType = file; path = stops.xls; sourceTree = "<group>"; };
 		F9A27E2526F275D300489892 /* stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
 		F9A27E2826F276A000489892 /* StopsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopsModel.swift; sourceTree = "<group>"; };
-		F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +104,10 @@
 			children = (
 				F9A27E0C26F24BFA00489892 /* HomeViewController.swift */,
 				F9A27E1E26F24E7D00489892 /* HomeViewModel.swift */,
-				F9A27E2A26F295F300489892 /* LocationAnnotationView.swift */,
+				F90CA4B326F3B750006C9530 /* annotationView.xib */,
+				F90CA4B526F3B78F006C9530 /* annotationView.swift */,
+				F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */,
+				F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -105,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				F9A27E2826F276A000489892 /* StopsModel.swift */,
+				F90CA4AF26F3A8F0006C9530 /* Annotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -167,10 +179,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9A27E1526F24BFB00489892 /* LaunchScreen.storyboard in Resources */,
+				F90CA4B426F3B750006C9530 /* annotationView.xib in Resources */,
 				F9A27E1226F24BFB00489892 /* Assets.xcassets in Resources */,
 				F9A27E1026F24BFA00489892 /* Main.storyboard in Resources */,
 				F9A27E2626F275D300489892 /* stops.json in Resources */,
 				F9A27E2426F2598C00489892 /* stops.xls in Resources */,
+				F90CA4BE26F3E236006C9530 /* AnnotationTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,12 +195,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F90CA4BD26F3E236006C9530 /* AnnotationTableViewCell.swift in Sources */,
 				F9A27E2226F2539400489892 /* Extensions.swift in Sources */,
 				F9A27E0D26F24BFA00489892 /* HomeViewController.swift in Sources */,
 				F9A27E0926F24BFA00489892 /* AppDelegate.swift in Sources */,
-				F9A27E2B26F295F300489892 /* LocationAnnotationView.swift in Sources */,
+				F90CA4B626F3B78F006C9530 /* annotationView.swift in Sources */,
 				F9A27E2926F276A000489892 /* StopsModel.swift in Sources */,
 				F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */,
+				F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */,
 				F9A27E1F26F24E7D00489892 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
