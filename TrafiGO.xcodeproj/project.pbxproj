@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9FF253FAD594ACBD06B60BDA /* Pods_TrafiGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C26B18679C195524C7502D64 /* Pods_TrafiGO.framework */; };
 		F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4AF26F3A8F0006C9530 /* Annotation.swift */; };
 		F90CA4B426F3B750006C9530 /* annotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4B326F3B750006C9530 /* annotationView.xib */; };
 		F90CA4B626F3B78F006C9530 /* annotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4B526F3B78F006C9530 /* annotationView.swift */; };
 		F90CA4BD26F3E236006C9530 /* AnnotationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */; };
 		F90CA4BE26F3E236006C9530 /* AnnotationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */; };
+		F9963AC426F67433000D2F72 /* URLDataDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9963AC326F67433000D2F72 /* URLDataDownloader.swift */; };
 		F9A27E0926F24BFA00489892 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0826F24BFA00489892 /* AppDelegate.swift */; };
 		F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */; };
 		F9A27E0D26F24BFA00489892 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A27E0C26F24BFA00489892 /* HomeViewController.swift */; };
@@ -26,11 +28,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		33CFA4620DAF4A854058F7D9 /* Pods-TrafiGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafiGO.release.xcconfig"; path = "Target Support Files/Pods-TrafiGO/Pods-TrafiGO.release.xcconfig"; sourceTree = "<group>"; };
+		B9B4754C89571B7E5E27A91B /* Pods-TrafiGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafiGO.debug.xcconfig"; path = "Target Support Files/Pods-TrafiGO/Pods-TrafiGO.debug.xcconfig"; sourceTree = "<group>"; };
+		C26B18679C195524C7502D64 /* Pods_TrafiGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrafiGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F90CA4AF26F3A8F0006C9530 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		F90CA4B326F3B750006C9530 /* annotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = annotationView.xib; sourceTree = "<group>"; };
 		F90CA4B526F3B78F006C9530 /* annotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotationView.swift; sourceTree = "<group>"; };
 		F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewCell.swift; sourceTree = "<group>"; };
 		F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationTableViewCell.xib; sourceTree = "<group>"; };
+		F9963AC326F67433000D2F72 /* URLDataDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLDataDownloader.swift; sourceTree = "<group>"; };
 		F9A27E0526F24BFA00489892 /* TrafiGO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrafiGO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A27E0826F24BFA00489892 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9A27E0A26F24BFA00489892 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,17 +57,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FF253FAD594ACBD06B60BDA /* Pods_TrafiGO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		520CABFBBA2672722B2789D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C26B18679C195524C7502D64 /* Pods_TrafiGO.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		67813D69BF4D248F5F799BC5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B9B4754C89571B7E5E27A91B /* Pods-TrafiGO.debug.xcconfig */,
+				33CFA4620DAF4A854058F7D9 /* Pods-TrafiGO.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F9A27DFC26F24BFA00489892 = {
 			isa = PBXGroup;
 			children = (
 				F9A27E0726F24BFA00489892 /* TrafiGO */,
 				F9A27E0626F24BFA00489892 /* Products */,
+				67813D69BF4D248F5F799BC5 /* Pods */,
+				520CABFBBA2672722B2789D9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,6 +114,7 @@
 				F9A27E1626F24BFB00489892 /* Info.plist */,
 				F9A27E2126F2539400489892 /* Extensions.swift */,
 				F9A27E2526F275D300489892 /* stops.json */,
+				F9963AC326F67433000D2F72 /* URLDataDownloader.swift */,
 			);
 			path = TrafiGO;
 			sourceTree = "<group>";
@@ -128,9 +156,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9A27E1926F24BFB00489892 /* Build configuration list for PBXNativeTarget "TrafiGO" */;
 			buildPhases = (
+				725D7563400C82597C5EC8E2 /* [CP] Check Pods Manifest.lock */,
 				F9A27E0126F24BFA00489892 /* Sources */,
 				F9A27E0226F24BFA00489892 /* Frameworks */,
 				F9A27E0326F24BFA00489892 /* Resources */,
+				4389B203AB21848398384362 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +220,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4389B203AB21848398384362 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrafiGO/Pods-TrafiGO-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TrafiGO/Pods-TrafiGO-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TrafiGO/Pods-TrafiGO-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		725D7563400C82597C5EC8E2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TrafiGO-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F9A27E0126F24BFA00489892 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -203,6 +275,7 @@
 				F9A27E2926F276A000489892 /* StopsModel.swift in Sources */,
 				F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */,
 				F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */,
+				F9963AC426F67433000D2F72 /* URLDataDownloader.swift in Sources */,
 				F9A27E1F26F24E7D00489892 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +420,7 @@
 		};
 		F9A27E1A26F24BFB00489892 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9B4754C89571B7E5E27A91B /* Pods-TrafiGO.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -367,6 +441,7 @@
 		};
 		F9A27E1B26F24BFB00489892 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 33CFA4620DAF4A854058F7D9 /* Pods-TrafiGO.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
