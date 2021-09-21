@@ -10,7 +10,7 @@ import UIKit
 class annotationView: UIView{
     @IBOutlet weak var titleLAbel: UILabel!
     @IBOutlet weak var annTab: UITableView!
-
+    @IBOutlet weak var loadingBusInfoIndicator: UIActivityIndicatorView!
 }
 
 

@@ -8,7 +8,9 @@
 import UIKit
 
 class AnnotationTableViewCell: UITableViewCell {
-    @IBOutlet var labelText: UILabel!
+    @IBOutlet weak var busNumberLabel: UILabel!
+    @IBOutlet weak var busDestinationLabel: UILabel!
+    @IBOutlet weak var busTimeLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

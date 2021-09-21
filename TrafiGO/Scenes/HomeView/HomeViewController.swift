@@ -54,20 +54,28 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         
         let customView = Bundle.main.loadNibNamed("annotationView", owner: self, options: nil)?.first as! annotationView
         customView.titleLAbel.text = annotation.stopName
-        view.detailCalloutAccessoryView = customView
 
+        customView.loadingBusInfoIndicator.startAnimating()
+        view.detailCalloutAccessoryView = customView
+        
 
         homeViewModel.downloadBusStopInfo(stopID: annotation.stopID)
+        
         homeViewModel.timeTable.sink {[weak self] results in
             if let tableView = customView.annTab {
                 self?.tableViewNib = tableView
                 self?.tableViewNib.delegate = self
                 self?.tableViewNib.dataSource = self
+                //customView.loadingBusInfoIndicator.stopAnimating()
+                print("TimeTable Publisher")
+                print("Dane: \(results)")
+                customView.annTab.reloadData()
             }
-            customView.annTab.reloadData()
-            view.detailCalloutAccessoryView = customView
-            
         }.store(in: &subscriptions)
+        
+
+        
+        
 
         print("Annotation: \(annotation.stopID)")
     }
@@ -84,10 +92,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
             annotationView!.canShowCallout = true
-            
-            
-
-            
         } else {
             annotationView!.annotation = annotation
         }
@@ -114,12 +118,12 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AnnotationTableViewCell", owner: self, options: nil)?.first as! AnnotationTableViewCell
         if homeViewModel.timeTable.value.count > 1 {
-            cell.labelText.text = homeViewModel.timeTable.value[0][0]
+            cell.busNumberLabel.text = homeViewModel.timeTable.value[indexPath.row][0]
+            cell.busDestinationLabel.text = homeViewModel.timeTable.value[indexPath.row][1]
+            cell.busTimeLabel.text = homeViewModel.timeTable.value[indexPath.row][2]
         } else {
-            cell.labelText.text = "Brak zaplanowanych przyjazdów"
+            cell.busDestinationLabel.text = "Brak zaplanowanych przyjazdów"
         }
-
-        
         return cell
     }
 

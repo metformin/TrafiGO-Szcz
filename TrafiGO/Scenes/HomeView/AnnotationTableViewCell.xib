@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -18,40 +17,51 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfQ-Sf-Do1">
-                        <rect key="frame" x="20" y="11.5" width="280" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="21" id="TjA-ul-GBt"/>
-                            <constraint firstAttribute="width" constant="42" id="dyn-gj-VjG"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfQ-Sf-Do1">
+                        <rect key="frame" x="10" y="22" width="64" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="dyn-gj-VjG"/>
-                            </mask>
-                        </variation>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-FJ-IYT">
+                        <rect key="frame" x="84" y="12" width="160" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-Xn-jdl">
+                        <rect key="frame" x="310" y="22" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
                     </label>
                 </subviews>
-                <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="LfQ-Sf-Do1" secondAttribute="trailing" constant="20" id="ADa-Mx-7fb"/>
-                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="LVT-um-6lQ"/>
-                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="PWZ-2b-McS"/>
-                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cNr-1O-RIS"/>
+                    <constraint firstAttribute="trailing" secondItem="nUY-Xn-jdl" secondAttribute="trailing" constant="10" id="H6u-pa-oco"/>
+                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Lcc-H8-fsb"/>
+                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="MCK-HE-ZgP"/>
+                    <constraint firstItem="l4Y-FJ-IYT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="Zov-zE-z1a"/>
+                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="leading" secondItem="l4Y-FJ-IYT" secondAttribute="trailing" constant="8" symbolic="YES" id="hGx-X9-LmE"/>
+                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="centerY" secondItem="l4Y-FJ-IYT" secondAttribute="centerY" id="kZl-i7-akK"/>
+                    <constraint firstItem="LfQ-Sf-Do1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nP7-ld-Vhl"/>
+                    <constraint firstItem="l4Y-FJ-IYT" firstAttribute="leading" secondItem="LfQ-Sf-Do1" secondAttribute="trailing" constant="10" id="tXF-Et-ER2"/>
+                    <constraint firstItem="l4Y-FJ-IYT" firstAttribute="centerY" secondItem="LfQ-Sf-Do1" secondAttribute="centerY" id="taT-W0-83C"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="hGx-X9-LmE"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="labelText" destination="LfQ-Sf-Do1" id="f4w-gs-Nw4"/>
+                <outlet property="busDestinationLabel" destination="l4Y-FJ-IYT" id="ktW-RQ-mZp"/>
+                <outlet property="busNumberLabel" destination="LfQ-Sf-Do1" id="ZpO-Lx-lde"/>
+                <outlet property="busTimeLabel" destination="nUY-Xn-jdl" id="bB4-Gz-ndD"/>
             </connections>
-            <point key="canvasLocation" x="-30" y="-15"/>
+            <point key="canvasLocation" x="-30.434782608695656" y="-15.401785714285714"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>
