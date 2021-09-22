@@ -19,6 +19,13 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     let initialLocation = CLLocation(latitude: 53.436554, longitude: 14.566362)
     var subscriptions = Set<AnyCancellable>()
     var tableViewNib = UITableView()
+    var customView = annotationView()
+    @IBOutlet weak var centerToUserLocationButton: UIButton!
+    @IBAction func centerToUserLocationButton(_ sender: Any) {
+        homeViewModel.getUserLocation()
+    }
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +33,22 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
         mapView.centerToLocation(initialLocation)
         fetchStopsAndConvertFromJSON()
         mapView.delegate = self
+        homeViewModel.userLocation
+            .sink { [weak self] location in
+                self?.mapView.centerToLocation(location, regionRadius: 500)
+            }.store(in: &subscriptions)
+        
+        homeViewModel.timeTable.sink {[weak self] results in
+            if let tableView = self?.customView.annTab {
+                self?.tableViewNib = tableView
+                self?.tableViewNib.delegate = self
+                self?.tableViewNib.dataSource = self
+                self?.customView.loadingBusInfoIndicator.stopAnimating()
+                print("DEBUG: Data: \(results)(9)")
+                self?.customView.annTab.reloadData()
+            }
+        }.store(in: &subscriptions)
+        
     }
     
     func fetchStopsAndConvertFromJSON(){
@@ -52,7 +75,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
             return
         }
         
-        let customView = Bundle.main.loadNibNamed("annotationView", owner: self, options: nil)?.first as! annotationView
+        customView = Bundle.main.loadNibNamed("annotationView", owner: self, options: nil)?.first as! annotationView
         customView.titleLAbel.text = annotation.stopName
 
         customView.loadingBusInfoIndicator.startAnimating()
@@ -61,22 +84,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
 
         homeViewModel.downloadBusStopInfo(stopID: annotation.stopID)
         
-        homeViewModel.timeTable.sink {[weak self] results in
-            if let tableView = customView.annTab {
-                self?.tableViewNib = tableView
-                self?.tableViewNib.delegate = self
-                self?.tableViewNib.dataSource = self
-                //customView.loadingBusInfoIndicator.stopAnimating()
-                print("TimeTable Publisher")
-                print("Dane: \(results)")
-                customView.annTab.reloadData()
-            }
-        }.store(in: &subscriptions)
-        
-
-        
-        
-
         print("Annotation: \(annotation.stopID)")
     }
 
@@ -117,12 +124,21 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = Bundle.main.loadNibNamed("AnnotationTableViewCell", owner: self, options: nil)?.first as! AnnotationTableViewCell
-        if homeViewModel.timeTable.value.count > 1 {
+        
+
+        if homeViewModel.timeTable.value[indexPath.row].count == 1{
+            cell.busDestinationLabel.text = "Brak zaplanowanych przyjazdów"
+        } else {
             cell.busNumberLabel.text = homeViewModel.timeTable.value[indexPath.row][0]
             cell.busDestinationLabel.text = homeViewModel.timeTable.value[indexPath.row][1]
             cell.busTimeLabel.text = homeViewModel.timeTable.value[indexPath.row][2]
+        }
+        
+        
+        
+        if homeViewModel.timeTable.value.count > 1 {
+
         } else {
-            cell.busDestinationLabel.text = "Brak zaplanowanych przyjazdów"
         }
         return cell
     }

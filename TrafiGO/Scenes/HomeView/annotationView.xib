@@ -6,6 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -16,17 +21,9 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7x-KK-l8q">
                     <rect key="frame" x="10" y="10" width="394" height="65"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="394" id="7La-vj-ohd"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="25"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
-                    <variation key="default">
-                        <mask key="constraints">
-                            <exclude reference="7La-vj-ohd"/>
-                        </mask>
-                    </variation>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cRE-4H-tXF">
                     <rect key="frame" x="0.0" y="85" width="414" height="250"/>
@@ -45,29 +42,21 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="C7x-KK-l8q" secondAttribute="trailing" constant="10" id="02u-Ja-HIl"/>
-                <constraint firstItem="C7x-KK-l8q" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.951691" id="0Io-J1-oyG"/>
                 <constraint firstItem="x1g-eA-Hq9" firstAttribute="centerY" secondItem="cRE-4H-tXF" secondAttribute="centerY" id="1pB-aH-7du"/>
                 <constraint firstItem="x1g-eA-Hq9" firstAttribute="width" secondItem="cRE-4H-tXF" secondAttribute="width" id="4Yp-F0-vrh"/>
                 <constraint firstItem="x1g-eA-Hq9" firstAttribute="centerX" secondItem="cRE-4H-tXF" secondAttribute="centerX" id="Cgf-cv-AO2"/>
                 <constraint firstItem="cRE-4H-tXF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="EjB-r0-nSI"/>
-                <constraint firstItem="cRE-4H-tXF" firstAttribute="top" secondItem="C7x-KK-l8q" secondAttribute="bottom" constant="10" id="Eyo-U7-YZg"/>
                 <constraint firstItem="x1g-eA-Hq9" firstAttribute="height" secondItem="cRE-4H-tXF" secondAttribute="height" id="Ol2-nf-eUI"/>
+                <constraint firstItem="cRE-4H-tXF" firstAttribute="top" secondItem="C7x-KK-l8q" secondAttribute="bottom" constant="10" id="Q2I-fR-CFQ"/>
                 <constraint firstAttribute="bottom" secondItem="cRE-4H-tXF" secondAttribute="bottom" id="SPj-2a-tVJ"/>
-                <constraint firstItem="C7x-KK-l8q" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.951691" id="SVa-Yl-yBl"/>
-                <constraint firstItem="C7x-KK-l8q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="jhN-gO-bNA"/>
-                <constraint firstItem="C7x-KK-l8q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="mru-sY-Bwc"/>
+                <constraint firstItem="C7x-KK-l8q" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.951691" id="WTw-nj-dIc"/>
                 <constraint firstAttribute="trailing" secondItem="cRE-4H-tXF" secondAttribute="trailing" id="nt1-GY-uCY"/>
-                <constraint firstAttribute="bottom" secondItem="C7x-KK-l8q" secondAttribute="bottom" constant="168" id="snT-gj-g20"/>
+                <constraint firstAttribute="trailing" secondItem="C7x-KK-l8q" secondAttribute="trailing" constant="10" id="owe-lS-X8P"/>
+                <constraint firstItem="C7x-KK-l8q" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="scg-ah-F9y"/>
+                <constraint firstItem="C7x-KK-l8q" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="xyf-D0-DVq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
-            <variation key="default">
-                <mask key="constraints">
-                    <exclude reference="0Io-J1-oyG"/>
-                    <exclude reference="snT-gj-g20"/>
-                </mask>
-            </variation>
             <connections>
                 <outlet property="annTab" destination="cRE-4H-tXF" id="Rm0-po-CN4"/>
                 <outlet property="loadingBusInfoIndicator" destination="x1g-eA-Hq9" id="4wg-EU-8AF"/>

@@ -7,14 +7,39 @@
 
 import Foundation
 import Combine
+import CoreLocation
 
 class HomeViewModel{
     var allStopsData = PassthroughSubject<[StopModel],Error>()
+    var userLocation = PassthroughSubject<CLLocation,Never>()
     let busStopInfoDownloader = BusStopInfoDownloader()
+    let location = Location()
     var timeTable = CurrentValueSubject<[[String]], Never>([[]])
     var subscriptions = Set<AnyCancellable>()
-
-
+    
+    init() {
+        
+        location.userLocation
+            .sink { [weak self] location in
+                self?.userLocation.send(location)
+        }
+            .store(in: &subscriptions)
+        
+        busStopInfoDownloader.timeTable
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("DEBUG: Completion finished")
+                    break
+                case .failure(let error):
+                    print("DEBUG: Completion failure: \(error)")
+                    break
+                }
+            }, receiveValue: {[weak self] results in
+                self?.timeTable.send(results)
+            })
+             .store(in: &subscriptions)
+    }
    
     func decodeStopsInfoFromJSON(){
         if let stopsJSON = Bundle.main.url(forResource: "stops", withExtension: "json"){
@@ -29,11 +54,13 @@ class HomeViewModel{
         }
     }
     
+    func getUserLocation(){
+        location.requestLocation()
+    }
+    
     func downloadBusStopInfo(stopID: Int){
         busStopInfoDownloader.downloadInfoAboutSpecificBusStop(stopID: stopID)
-        busStopInfoDownloader.timeTable.sink { results in
-            self.timeTable.send(results)
-        }.store(in: &subscriptions)
+       
     }
     
 }
