@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		9FF253FAD594ACBD06B60BDA /* Pods_TrafiGO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C26B18679C195524C7502D64 /* Pods_TrafiGO.framework */; };
+		F905D78E26FE58AC00DCFB0D /* searchTableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F905D78D26FE58AC00DCFB0D /* searchTableDelegate.swift */; };
 		F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4AF26F3A8F0006C9530 /* Annotation.swift */; };
 		F90CA4B426F3B750006C9530 /* annotationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4B326F3B750006C9530 /* annotationView.xib */; };
 		F90CA4B626F3B78F006C9530 /* annotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4B526F3B78F006C9530 /* annotationView.swift */; };
 		F90CA4BD26F3E236006C9530 /* AnnotationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */; };
 		F90CA4BE26F3E236006C9530 /* AnnotationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */; };
+		F94AA0B526FD2A60004C73C6 /* BusStopsSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94AA0B426FD2A60004C73C6 /* BusStopsSearchResultsView.swift */; };
+		F94AA0B726FD2AD2004C73C6 /* BusStopsSearchResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F94AA0B626FD2AD2004C73C6 /* BusStopsSearchResultsView.xib */; };
 		F97FCFF126FBBDE3003A501B /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97FCFDF26FBBDE2003A501B /* Poppins-Light.ttf */; };
 		F97FCFF226FBBDE3003A501B /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97FCFE026FBBDE2003A501B /* Poppins-Medium.ttf */; };
 		F97FCFF326FBBDE3003A501B /* Poppins-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F97FCFE126FBBDE2003A501B /* Poppins-ExtraLight.ttf */; };
@@ -50,11 +53,14 @@
 		33CFA4620DAF4A854058F7D9 /* Pods-TrafiGO.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafiGO.release.xcconfig"; path = "Target Support Files/Pods-TrafiGO/Pods-TrafiGO.release.xcconfig"; sourceTree = "<group>"; };
 		B9B4754C89571B7E5E27A91B /* Pods-TrafiGO.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TrafiGO.debug.xcconfig"; path = "Target Support Files/Pods-TrafiGO/Pods-TrafiGO.debug.xcconfig"; sourceTree = "<group>"; };
 		C26B18679C195524C7502D64 /* Pods_TrafiGO.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TrafiGO.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F905D78D26FE58AC00DCFB0D /* searchTableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchTableDelegate.swift; sourceTree = "<group>"; };
 		F90CA4AF26F3A8F0006C9530 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
 		F90CA4B326F3B750006C9530 /* annotationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = annotationView.xib; sourceTree = "<group>"; };
 		F90CA4B526F3B78F006C9530 /* annotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = annotationView.swift; sourceTree = "<group>"; };
 		F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationTableViewCell.swift; sourceTree = "<group>"; };
 		F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnnotationTableViewCell.xib; sourceTree = "<group>"; };
+		F94AA0B426FD2A60004C73C6 /* BusStopsSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopsSearchResultsView.swift; sourceTree = "<group>"; };
+		F94AA0B626FD2AD2004C73C6 /* BusStopsSearchResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BusStopsSearchResultsView.xib; sourceTree = "<group>"; };
 		F97FCFDF26FBBDE2003A501B /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		F97FCFE026FBBDE2003A501B /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		F97FCFE126FBBDE2003A501B /* Poppins-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraLight.ttf"; sourceTree = "<group>"; };
@@ -127,6 +133,16 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F94AA0AF26FD2586004C73C6 /* SearchResults */ = {
+			isa = PBXGroup;
+			children = (
+				F94AA0B426FD2A60004C73C6 /* BusStopsSearchResultsView.swift */,
+				F94AA0B626FD2AD2004C73C6 /* BusStopsSearchResultsView.xib */,
+				F905D78D26FE58AC00DCFB0D /* searchTableDelegate.swift */,
+			);
+			path = SearchResults;
+			sourceTree = "<group>";
+		};
 		F97FCFDE26FBBDB4003A501B /* Poppins */ = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +210,7 @@
 		F9A27E1C26F24DF700489892 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F94AA0AF26FD2586004C73C6 /* SearchResults */,
 				F9A27E1D26F24E0A00489892 /* HomeView */,
 			);
 			path = Scenes;
@@ -294,6 +311,7 @@
 				F9A27E1026F24BFA00489892 /* Main.storyboard in Resources */,
 				F97FCFFE26FBBDE3003A501B /* Poppins-ExtraBold.ttf in Resources */,
 				F97FCFF826FBBDE3003A501B /* Poppins-ExtraBoldItalic.ttf in Resources */,
+				F94AA0B726FD2AD2004C73C6 /* BusStopsSearchResultsView.xib in Resources */,
 				F97FCFFD26FBBDE3003A501B /* Poppins-LightItalic.ttf in Resources */,
 				F97FCFF626FBBDE3003A501B /* Poppins-Bold.ttf in Resources */,
 				F9A27E2626F275D300489892 /* stops.json in Resources */,
@@ -365,7 +383,9 @@
 				F90CA4B626F3B78F006C9530 /* annotationView.swift in Sources */,
 				F9A27E2926F276A000489892 /* StopsModel.swift in Sources */,
 				F9A27E0B26F24BFA00489892 /* SceneDelegate.swift in Sources */,
+				F94AA0B526FD2A60004C73C6 /* BusStopsSearchResultsView.swift in Sources */,
 				F90CA4B026F3A8F0006C9530 /* Annotation.swift in Sources */,
+				F905D78E26FE58AC00DCFB0D /* searchTableDelegate.swift in Sources */,
 				F9963AC426F67433000D2F72 /* URLDataDownloader.swift in Sources */,
 				F9A27E1F26F24E7D00489892 /* HomeViewModel.swift in Sources */,
 			);

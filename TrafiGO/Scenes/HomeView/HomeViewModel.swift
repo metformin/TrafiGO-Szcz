@@ -8,17 +8,20 @@
 import Foundation
 import Combine
 import CoreLocation
+import UIKit
 
-class HomeViewModel{
-    var allStopsData = PassthroughSubject<[StopModel],Error>()
+class HomeViewModel: ObservableObject{
+    var allStopsData = CurrentValueSubject<[StopModel],Error>([])
     var userLocation = PassthroughSubject<CLLocation,Never>()
+    var busStopsSearchText = CurrentValueSubject<String, Never>("")
+    var selectedStopsForSearch = CurrentValueSubject<[StopModel],Never>([])
     let busStopInfoDownloader = BusStopInfoDownloader()
     let location = Location()
     var timeTable = CurrentValueSubject<[[String]], Never>([[]])
     var subscriptions = Set<AnyCancellable>()
+
     
     init() {
-        
         location.userLocation
             .sink { [weak self] location in
                 self?.userLocation.send(location)
@@ -40,7 +43,30 @@ class HomeViewModel{
             })
              .store(in: &subscriptions)
     }
-   
+    func setupSearchBusStop(){
+        busStopsSearchText
+            .removeDuplicates()
+            .map{[unowned self] text -> [StopModel] in
+                self.searchBusStop(search: text)
+            }
+            .debounce(for: .milliseconds(500), scheduler: RunLoop.main)
+            .sink { [weak self]selectedStops in
+                self?.selectedStopsForSearch.send(selectedStops)
+            }.store(in: &subscriptions)
+    }
+    
+    func searchBusStop(search text: String) -> [StopModel]{
+        let allStops = allStopsData.value
+        var selectedStops: [StopModel] = []
+        
+        for stop in allStops {
+            if stop.stopName.contains(text){
+                selectedStops.append(stop)
+            }
+        }
+        
+        return selectedStops
+    }
     func decodeStopsInfoFromJSON(){
         if let stopsJSON = Bundle.main.url(forResource: "stops", withExtension: "json"){
             do {
@@ -60,7 +86,8 @@ class HomeViewModel{
     
     func downloadBusStopInfo(stopID: Int){
         busStopInfoDownloader.downloadInfoAboutSpecificBusStop(stopID: stopID)
-       
     }
+    
+
     
 }

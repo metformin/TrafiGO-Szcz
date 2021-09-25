@@ -18,34 +18,50 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     let homeViewModel = HomeViewModel()
     let initialLocation = CLLocation(latitude: 53.436554, longitude: 14.566362)
     var subscriptions = Set<AnyCancellable>()
-    var tableViewNib = UITableView()
-    var customView = annotationView()
+    var tableViewAnnotation = UITableView()
+    var tableViewSearch = UITableView()
+    var customSearchView = BusStopsSearchResultsView()
+    var customAnnotationView = annotationView()
+    @IBOutlet weak var busStopsSearchBar: UISearchBar!
+    @IBOutlet weak var busStopsSearchBarView: UIView!
     @IBOutlet weak var centerToUserLocationButton: UIButton!
     @IBAction func centerToUserLocationButton(_ sender: Any) {
         homeViewModel.getUserLocation()
     }
+  
+
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.hideKeyboardWhenTappedAround()
         mapView.centerToLocation(initialLocation)
         fetchStopsAndConvertFromJSON()
         mapView.delegate = self
+        busStopsSearchBar.delegate = self
         homeViewModel.userLocation
             .sink { [weak self] location in
-                self?.mapView.centerToLocation(location, regionRadius: 500)
+                self?.centerMap(at: location)
             }.store(in: &subscriptions)
         
         homeViewModel.timeTable.sink {[weak self] results in
-            if let tableView = self?.customView.annTab {
-                self?.tableViewNib = tableView
-                self?.tableViewNib.delegate = self
-                self?.tableViewNib.dataSource = self
-                self?.customView.loadingBusInfoIndicator.stopAnimating()
+            if let tableView = self?.customAnnotationView.annTab {
+                self?.tableViewAnnotation = tableView
+                self?.tableViewAnnotation.delegate = self
+                self?.tableViewAnnotation.dataSource = self
+                self?.customAnnotationView.loadingBusInfoIndicator.stopAnimating()
                 print("DEBUG: Data: \(results)(9)")
-                self?.customView.annTab.reloadData()
+                self?.customAnnotationView.annTab.reloadData()
+            }
+        }.store(in: &subscriptions)
+        
+        homeViewModel.selectedStopsForSearch.sink { results in
+            self.customSearchView.selectedStops = results
+            if let tableView = self.customSearchView.busStopsSearchTableView {
+                self.tableViewSearch = tableView
+                self.customSearchView.busStopsSearchTableView.reloadData()
             }
         }.store(in: &subscriptions)
         
@@ -75,11 +91,11 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
             return
         }
         
-        customView = Bundle.main.loadNibNamed("annotationView", owner: self, options: nil)?.first as! annotationView
-        customView.titleLAbel.text = annotation.stopName
+        customAnnotationView = Bundle.main.loadNibNamed("annotationView", owner: self, options: nil)?.first as! annotationView
+        customAnnotationView.titleLAbel.text = annotation.stopName
 
-        customView.loadingBusInfoIndicator.startAnimating()
-        view.detailCalloutAccessoryView = customView
+        customAnnotationView.loadingBusInfoIndicator.startAnimating()
+        view.detailCalloutAccessoryView = customAnnotationView
         
 
         homeViewModel.downloadBusStopInfo(stopID: annotation.stopID)
@@ -114,6 +130,29 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
 
         return annotationView
        }
+    
+    func showBusStopsSearchResultsView(){
+        customSearchView = Bundle.main.loadNibNamed("BusStopsSearchResultsView", owner: self, options: nil)?.first as! BusStopsSearchResultsView
+        customSearchView.tag = 10
+        customSearchView.onMapButtonCallback = { location in self.centerMap(at: location) }
+
+        UIView.transition(with: self.view, duration: 0.3, options: [.curveLinear], animations: {
+            self.view.addSubview(self.customSearchView)
+        }, completion: nil)
+        customSearchView.translatesAutoresizingMaskIntoConstraints = false
+            let horizontalConstraint = customSearchView.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            let verticalConstraint = customSearchView.topAnchor.constraint(equalTo: busStopsSearchBarView.bottomAnchor)
+            let widthConstraint = customSearchView.widthAnchor.constraint(equalTo: busStopsSearchBarView.widthAnchor)
+            let heightConstraint = customSearchView.heightAnchor.constraint(equalToConstant: 200)
+            view.addConstraints([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
+    }
+    
+    func centerMap(at point: CLLocation){
+        print("Location: \(point)")
+        
+        mapView.centerToLocation(point, regionRadius: 300)
+        
+    }
 }
 
 extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
@@ -143,5 +182,22 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
 
+}
+
+extension HomeViewController: UISearchBarDelegate{
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+      showBusStopsSearchResultsView()
+        homeViewModel.setupSearchBusStop()
+
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if let removable = view.viewWithTag(10){
+           removable.removeFromSuperview()
+        }
+    }
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print("DEBUG: Search text: \(searchText)" )
+        homeViewModel.busStopsSearchText.send(searchText)
+    }
 }
 

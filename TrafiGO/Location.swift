@@ -20,15 +20,19 @@ class Location: NSObject, CLLocationManagerDelegate {
     }
     
     func checkIfLocationIsAuth() -> Bool {
-        if CLLocationManager.authorizationStatus() != .authorizedAlways || CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            return false
-        } else {
+        if CLLocationManager.authorizationStatus() == .authorizedAlways ||
+        CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            print("DEBUG: Location auth")
             return true
+        } else {
+            locationManager.requestWhenInUseAuthorization()
+            print("DEBUG: Location auth failed")
+            return false
         }
     }
     
     func requestLocation(){
-        if checkIfLocationIsAuth() == false {
+        if checkIfLocationIsAuth() == true {
             locationManager.delegate = self
             locationManager.startUpdatingLocation()
             

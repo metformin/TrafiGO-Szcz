@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -37,32 +37,79 @@
                                     <action selector="centerToUserLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TLD-gj-PUR"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0hu-k6-e8c">
+                                <rect key="frame" x="10" y="54" width="394" height="50"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Wyszukaj przystanek" translatesAutoresizingMaskIntoConstraints="NO" id="CFC-gx-m0p">
+                                        <rect key="frame" x="55" y="0.0" width="339" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" role="primary" translatesAutoresizingMaskIntoConstraints="NO" id="EXa-9m-upp">
+                                        <rect key="frame" x="10" y="0.0" width="45" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <buttonConfiguration key="configuration" style="plain">
+                                            <imageReference key="image" image="line.3.horizontal" catalog="system" symbolScale="large"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large"/>
+                                            <color key="baseForegroundColor" systemColor="tintColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="CFC-gx-m0p" secondAttribute="bottom" constant="5" id="0EA-0o-y3O"/>
+                                    <constraint firstAttribute="height" constant="50" id="F6H-vk-KG7"/>
+                                    <constraint firstAttribute="trailing" secondItem="CFC-gx-m0p" secondAttribute="trailing" id="SXH-TN-chI"/>
+                                    <constraint firstAttribute="bottom" secondItem="EXa-9m-upp" secondAttribute="bottom" id="VLx-Lz-hDL"/>
+                                    <constraint firstItem="EXa-9m-upp" firstAttribute="top" secondItem="0hu-k6-e8c" secondAttribute="top" id="cXj-q9-73W"/>
+                                    <constraint firstAttribute="bottom" secondItem="CFC-gx-m0p" secondAttribute="bottom" id="kng-Md-hQY"/>
+                                    <constraint firstItem="CFC-gx-m0p" firstAttribute="leading" secondItem="0hu-k6-e8c" secondAttribute="leading" constant="50" id="p3S-4O-4a5"/>
+                                    <constraint firstItem="CFC-gx-m0p" firstAttribute="leading" secondItem="EXa-9m-upp" secondAttribute="trailing" id="uCR-ef-f2S"/>
+                                    <constraint firstItem="CFC-gx-m0p" firstAttribute="top" secondItem="0hu-k6-e8c" secondAttribute="top" id="whr-BS-Kaz"/>
+                                    <constraint firstItem="EXa-9m-upp" firstAttribute="leading" secondItem="0hu-k6-e8c" secondAttribute="leading" constant="10" id="zPl-er-k8C"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0EA-0o-y3O"/>
+                                        <exclude reference="p3S-4O-4a5"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hAH-30-lqm" secondAttribute="trailing" id="93e-uv-JJl"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vbo-je-Htr" secondAttribute="trailing" constant="20" id="BYG-ed-Z3Q"/>
+                            <constraint firstItem="0hu-k6-e8c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="HAs-Vg-8gL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0hu-k6-e8c" secondAttribute="trailing" constant="10" id="NGd-pb-OBJ"/>
                             <constraint firstItem="hAH-30-lqm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="NWU-Sc-RFz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vbo-je-Htr" secondAttribute="bottom" constant="40" id="g6s-qX-3js"/>
                             <constraint firstItem="hAH-30-lqm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="iDi-1T-Jk6"/>
+                            <constraint firstItem="0hu-k6-e8c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="jeN-td-9Ed"/>
                             <constraint firstAttribute="bottom" secondItem="hAH-30-lqm" secondAttribute="bottom" id="txD-H0-Ywn"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="busStopsSearchBar" destination="CFC-gx-m0p" id="3pZ-pH-wZf"/>
+                        <outlet property="busStopsSearchBarView" destination="0hu-k6-e8c" id="V74-le-loP"/>
                         <outlet property="centerToUserLocationButton" destination="vbo-je-Htr" id="Dfa-Ip-JMW"/>
                         <outlet property="mapView" destination="hAH-30-lqm" id="Ohc-2c-yWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="117"/>
+            <point key="canvasLocation" x="131.8840579710145" y="116.51785714285714"/>
         </scene>
     </scenes>
     <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="64"/>
         <image name="location.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
