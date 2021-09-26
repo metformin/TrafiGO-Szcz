@@ -34,25 +34,31 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hideKeyboardWhenTappedAround()
-        mapView.centerToLocation(homeViewModel.initialLocation)
-        fetchStopsAndConvertFromJSON()
         mapView.delegate = self
         busStopsSearchBar.delegate = self
         
+        busStopsSearchBarView.layer.cornerRadius = 10
+        centerToUserLocationButton.layer.cornerRadius = 10
+        
+        self.hideKeyboardWhenTappedAround()
+        mapView.centerToLocation(homeViewModel.initialLocation)
+        fetchStopsAndConvertFromJSON()
+        subscriptionsSetup()
+    }
+    
+    func subscriptionsSetup(){
         homeViewModel.userLocation
             .sink { [weak self] location in
                 self?.centerMap(at: location)
             }.store(in: &subscriptions)
         
         homeViewModel.timeTable.sink {[weak self] results in
-            if let tableView = self?.customAnnotationView.annTab {
+            self?.customAnnotationView.timeTable = results
+            if let tableView = self?.customAnnotationView.annotationTable {
                 self?.tableViewAnnotation = tableView
-                self?.tableViewAnnotation.delegate = self
-                self?.tableViewAnnotation.dataSource = self
                 self?.customAnnotationView.loadingBusInfoIndicator.stopAnimating()
                 print("DEBUG: Data: \(results)(9)")
-                self?.customAnnotationView.annTab.reloadData()
+                self?.customAnnotationView.annotationTable.reloadData()
             }
         }.store(in: &subscriptions)
         
@@ -63,7 +69,6 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
                 self?.customSearchView.busStopsSearchTableView.reloadData()
             }
         }.store(in: &subscriptions)
-        
     }
     
     func fetchStopsAndConvertFromJSON(){
@@ -145,25 +150,7 @@ class HomeViewController: UIViewController, MKMapViewDelegate {
     }
 }
 
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-   
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return homeViewModel.timeTable.value.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = Bundle.main.loadNibNamed("AnnotationTableViewCell", owner: self, options: nil)?.first as! AnnotationTableViewCell
 
-        if homeViewModel.timeTable.value[indexPath.row].count == 1{
-            cell.busDestinationLabel.text = "Brak zaplanowanych przyjazdów"
-        } else {
-            cell.busNumberLabel.text = homeViewModel.timeTable.value[indexPath.row][0]
-            cell.busDestinationLabel.text = homeViewModel.timeTable.value[indexPath.row][1]
-            cell.busTimeLabel.text = homeViewModel.timeTable.value[indexPath.row][2]
-        }
-        return cell
-    }
-}
 
 extension HomeViewController: UISearchBarDelegate{
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {

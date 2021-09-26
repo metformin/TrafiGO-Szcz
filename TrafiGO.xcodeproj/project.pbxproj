@@ -131,6 +131,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F9400C9A2700F7B300149C2A /* AnnotationView */ = {
+			isa = PBXGroup;
+			children = (
+				F90CA4B326F3B750006C9530 /* AnnotationView.xib */,
+				F90CA4B526F3B78F006C9530 /* AnnotationView.swift */,
+				F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */,
+				F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */,
+			);
+			path = AnnotationView;
+			sourceTree = "<group>";
+		};
 		F94AA0AF26FD2586004C73C6 /* SearchResults */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +218,7 @@
 		F9A27E1C26F24DF700489892 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F9400C9A2700F7B300149C2A /* AnnotationView */,
 				F94AA0AF26FD2586004C73C6 /* SearchResults */,
 				F9A27E1D26F24E0A00489892 /* HomeView */,
 			);
@@ -218,10 +230,6 @@
 			children = (
 				F9A27E0C26F24BFA00489892 /* HomeViewController.swift */,
 				F9A27E1E26F24E7D00489892 /* HomeViewModel.swift */,
-				F90CA4B326F3B750006C9530 /* AnnotationView.xib */,
-				F90CA4B526F3B78F006C9530 /* AnnotationView.swift */,
-				F90CA4BB26F3E236006C9530 /* AnnotationTableViewCell.swift */,
-				F90CA4BC26F3E236006C9530 /* AnnotationTableViewCell.xib */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";

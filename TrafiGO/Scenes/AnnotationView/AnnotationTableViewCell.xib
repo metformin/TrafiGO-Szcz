@@ -35,7 +35,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-Xn-jdl">
-                        <rect key="frame" x="310" y="22" width="0.0" height="0.0"/>
+                        <rect key="frame" x="254" y="22" width="56" height="0.0"/>
                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,21 +43,16 @@
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="nUY-Xn-jdl" secondAttribute="trailing" constant="10" id="H6u-pa-oco"/>
                     <constraint firstItem="LfQ-Sf-Do1" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Lcc-H8-fsb"/>
                     <constraint firstItem="LfQ-Sf-Do1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="MCK-HE-ZgP"/>
+                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="centerY" secondItem="l4Y-FJ-IYT" secondAttribute="centerY" id="S4w-dD-5PM"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="Zov-zE-z1a"/>
-                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="leading" secondItem="l4Y-FJ-IYT" secondAttribute="trailing" constant="8" symbolic="YES" id="hGx-X9-LmE"/>
-                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="centerY" secondItem="l4Y-FJ-IYT" secondAttribute="centerY" id="kZl-i7-akK"/>
                     <constraint firstItem="LfQ-Sf-Do1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nP7-ld-Vhl"/>
+                    <constraint firstAttribute="trailing" secondItem="nUY-Xn-jdl" secondAttribute="trailing" constant="10" id="nlk-ew-GOk"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="leading" secondItem="LfQ-Sf-Do1" secondAttribute="trailing" constant="10" id="tXF-Et-ER2"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="centerY" secondItem="LfQ-Sf-Do1" secondAttribute="centerY" id="taT-W0-83C"/>
+                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="leading" secondItem="l4Y-FJ-IYT" secondAttribute="trailing" constant="10" id="tgz-V9-nfJ"/>
                 </constraints>
-                <variation key="default">
-                    <mask key="constraints">
-                        <exclude reference="hGx-X9-LmE"/>
-                    </mask>
-                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
