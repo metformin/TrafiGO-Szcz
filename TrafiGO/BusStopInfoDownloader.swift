@@ -24,8 +24,6 @@ class BusStopInfoDownloader: NSObject, WKNavigationDelegate {
 
     func downloadInfoAboutSpecificBusStop(stopID:Int){
         let stopURL = URL(string: url + String(stopID))
-        print("DEBUG: Stop URL: \(stopURL)(2)")
-       
         let request = URLRequest(url: stopURL!)
         web.load(request)
     }

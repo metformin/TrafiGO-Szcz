@@ -10,23 +10,25 @@ import Combine
 import CoreLocation
 
 class BusStopsSearchResultsView: UIView {
+    
+    // MARK: - IBOulets
     @IBOutlet weak var busStopsSearchTableView: UITableView!
-    var homeViewController: HomeViewController?
+    
+    // MARK: - Variables
     var selectedStops: [StopModel] = []
     var onMapButtonCallback : ((CLLocation) -> Void)?
 
-
+    // MARK: - View Events
     override func awakeFromNib() {
        super.awakeFromNib()
-        homeViewController = HomeViewController()
         busStopsSearchTableView.register(UITableViewCell.self, forCellReuseIdentifier: "searchCell")
         busStopsSearchTableView.delegate = self
         busStopsSearchTableView.dataSource = self
         busStopsSearchTableView.allowsSelection = true
-        print("awake")
     }
 }
 
+// MARK: - Table View Setup
 extension BusStopsSearchResultsView: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return selectedStops.count

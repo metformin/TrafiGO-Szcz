@@ -11,16 +11,21 @@ import CoreLocation
 import UIKit
 
 class HomeViewModel: ObservableObject{
+
+    // MARK: - Constants
+    let initialLocation = CLLocation(latitude: 53.436554, longitude: 14.566362)
+    let busStopInfoDownloader = BusStopInfoDownloader()
+    let location = LocationSetup()
+    var timeTable = CurrentValueSubject<[[String]], Never>([[]])
+    var subscriptions = Set<AnyCancellable>()
+    
+    // MARK: - Variables
     var allStopsData = CurrentValueSubject<[StopModel],Error>([])
     var userLocation = PassthroughSubject<CLLocation,Never>()
     var busStopsSearchText = CurrentValueSubject<String, Never>("")
     var selectedStopsForSearch = CurrentValueSubject<[StopModel],Never>([])
-    let busStopInfoDownloader = BusStopInfoDownloader()
-    let location = Location()
-    var timeTable = CurrentValueSubject<[[String]], Never>([[]])
-    var subscriptions = Set<AnyCancellable>()
 
-    
+    // MARK: - init(s)
     init() {
         location.userLocation
             .sink { [weak self] location in
@@ -43,6 +48,7 @@ class HomeViewModel: ObservableObject{
             })
              .store(in: &subscriptions)
     }
+    
     func setupSearchBusStop(){
         busStopsSearchText
             .removeDuplicates()
@@ -67,6 +73,7 @@ class HomeViewModel: ObservableObject{
         
         return selectedStops
     }
+    
     func decodeStopsInfoFromJSON(){
         if let stopsJSON = Bundle.main.url(forResource: "stops", withExtension: "json"){
             do {
@@ -87,7 +94,4 @@ class HomeViewModel: ObservableObject{
     func downloadBusStopInfo(stopID: Int){
         busStopInfoDownloader.downloadInfoAboutSpecificBusStop(stopID: stopID)
     }
-    
-
-    
 }

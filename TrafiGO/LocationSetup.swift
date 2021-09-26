@@ -9,7 +9,7 @@ import Foundation
 import CoreLocation
 import Combine
 
-class Location: NSObject, CLLocationManagerDelegate {
+class LocationSetup: NSObject, CLLocationManagerDelegate {
     
     
     var locationManager: CLLocationManager

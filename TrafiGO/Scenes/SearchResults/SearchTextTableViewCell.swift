@@ -10,8 +10,6 @@ import UIKit
 import Combine
 
 
-
-
 class SearchTextTableViewCell: UITableViewCell {
 
     init(style: UITableViewCell.CellStyle) {
