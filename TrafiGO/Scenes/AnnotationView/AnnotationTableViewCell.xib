@@ -29,13 +29,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4Y-FJ-IYT">
-                        <rect key="frame" x="84" y="11.5" width="160" height="21"/>
+                        <rect key="frame" x="84" y="11.5" width="152" height="21"/>
                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-Xn-jdl">
-                        <rect key="frame" x="254" y="22" width="56" height="0.0"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="nUY-Xn-jdl">
+                        <rect key="frame" x="246" y="22" width="64" height="0.0"/>
                         <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -47,12 +47,18 @@
                     <constraint firstItem="LfQ-Sf-Do1" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="MCK-HE-ZgP"/>
                     <constraint firstItem="nUY-Xn-jdl" firstAttribute="centerY" secondItem="l4Y-FJ-IYT" secondAttribute="centerY" id="S4w-dD-5PM"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.5" id="Zov-zE-z1a"/>
+                    <constraint firstItem="nUY-Xn-jdl" firstAttribute="width" secondItem="H2p-sc-9uM" secondAttribute="width" multiplier="0.2" id="lcI-Up-Clx"/>
                     <constraint firstItem="LfQ-Sf-Do1" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nP7-ld-Vhl"/>
                     <constraint firstAttribute="trailing" secondItem="nUY-Xn-jdl" secondAttribute="trailing" constant="10" id="nlk-ew-GOk"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="leading" secondItem="LfQ-Sf-Do1" secondAttribute="trailing" constant="10" id="tXF-Et-ER2"/>
                     <constraint firstItem="l4Y-FJ-IYT" firstAttribute="centerY" secondItem="LfQ-Sf-Do1" secondAttribute="centerY" id="taT-W0-83C"/>
                     <constraint firstItem="nUY-Xn-jdl" firstAttribute="leading" secondItem="l4Y-FJ-IYT" secondAttribute="trailing" constant="10" id="tgz-V9-nfJ"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Zov-zE-z1a"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
